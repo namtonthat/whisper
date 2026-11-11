@@ -6,7 +6,7 @@ readme = "README.md"
 requires-python = ">=3.12"
 dependencies = ["openai-whisper", "rich>=14.0.0"]
 
-[project.optional-dependencies]
+[dependency-groups]
 dev = ["ruff>=0.11.13", "pre-commit>=4.2.0", "commitizen"]
 
 [tool.ruff]
@@ -35,3 +35,6 @@ tag_format = "v$version"
 version_scheme = "pep440"
 version_provider = "pep621"
 update_changelog_on_bump = true
+
+[tool.uv.extra-build-dependencies]
+openai-whisper = ["setuptools<81"]
